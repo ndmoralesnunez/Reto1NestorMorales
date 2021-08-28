@@ -2,6 +2,7 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: Python application
+
 on:
   push:
     branches: [ main ]
@@ -33,3 +34,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+        
+    - uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{HEROKU_SECRET_NM}}
+        heroku_app_name: "Reto1NestorMorales"
+        heroku_email:  ${{HEROKU_EMAIL_NM}}
+        buildpack: 'heroku/python'
+        usedocker: false
