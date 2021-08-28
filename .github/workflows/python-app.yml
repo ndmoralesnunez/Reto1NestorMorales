@@ -38,7 +38,7 @@ jobs:
     - uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{HEROKU_SECRET_NM}}
-        heroku_app_name: "Reto1NestorMorales"
+        heroku_app_name: "maestriauidenmorales"
         heroku_email:  ${{HEROKU_EMAIL_NM}}
         buildpack: 'heroku/python'
         usedocker: false
